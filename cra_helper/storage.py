@@ -1,7 +1,6 @@
 import os
 
 from django.core.files.storage import FileSystemStorage
-from django.core.checks import Error
 
 
 class SingleFileStorage(FileSystemStorage):
@@ -11,6 +10,7 @@ class SingleFileStorage(FileSystemStorage):
 
     To use it, just pass an absolute path to the desired file as `location`
     '''
+
     def __init__(self, location=None, base_url=None, file_permissions_mode=None,
                  directory_permissions_mode=None):
         self._file_path = ''

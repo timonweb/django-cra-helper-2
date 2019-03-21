@@ -1,8 +1,6 @@
-from cra_helper import STATIC_ASSET_MANIFEST
+from cra_helper import REACT_ASSETS
 
 
 def static(request):
-    if STATIC_ASSET_MANIFEST:
-        return STATIC_ASSET_MANIFEST
-
-    return {}
+    if REACT_ASSETS:
+        return {'react_assets': REACT_ASSETS}

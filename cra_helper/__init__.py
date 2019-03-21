@@ -1,9 +1,8 @@
 import os
-
 from django.conf import settings
 
+from cra_helper.react_assets import get_js_and_css
 from cra_helper.server_check import is_server_live
-from cra_helper.asset_manifest import generate_manifest
 
 # Variables to help the template determine if it should try loading assets from the CRA live server
 _CRA_DEFAULT_PORT = 3000
@@ -31,4 +30,4 @@ CRA_LIVE = is_server_live(CRA_BUNDLE_PATH)
 CRA_FS_APP_DIR = os.path.join(settings.BASE_DIR, CRA_APP_NAME)
 
 # A list of entries in CRA's build bundle's
-STATIC_ASSET_MANIFEST = generate_manifest(CRA_LIVE, CRA_BUNDLE_PATH, CRA_FS_APP_DIR)
+REACT_ASSETS = get_js_and_css(CRA_LIVE, CRA_URL, CRA_FS_APP_DIR)
